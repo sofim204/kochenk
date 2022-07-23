@@ -105,7 +105,7 @@
         const buttons = document.querySelector('.pushme');
         const reload = document.querySelector('.reload');
 
-        var http_response = [ 100, 101, 102, 
+        let http_response = [ 100, 101, 102, 
                             200, 201, 202, 203, 204, 205, 206, 207,
                             300, 301, 302, 303, 304, 305, 307, 308,
                             400, 401, 402, 403, 404, 405, 406, 407, 
@@ -117,8 +117,8 @@
                             509, 510, 511, 521, 522, 523, 525, 599 
                             ];
 
-        var random = Math.floor((Math.random() * http_response.length));
-        var statusCode = http_response[random];
+        let random = Math.floor((Math.random() * http_response.length));
+        let statusCode = http_response[random];
 
         buttons.addEventListener('click', function() {
             const img = document.createElement('img');
