@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:description" content="Sopi iseng nggawe iki">
+    <title>Kumpulan Response Gambar Koceng</title>
+    <link rel="icon" type="image/x-icon" href="https://img.icons8.com/cute-clipart/64/000000/cat-caregivers.png">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500&display=swap');
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #eef0eb;
+            height: 100vh;
+        }
+        button {
+            font-family: 'Inter', sans-serif;
+            font-weight: 500;
+        }
+        .pushme {
+            background-color: #e96711; 
+            padding: 15px; 
+            color:white; 
+            border: none;
+            font-size: 24px;
+            border-radius: 10px;
+            margin: 0 10px;
+            box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+        }
+
+        .pushme:focus {
+            border: 1px solid #eb660e;
+        }
+
+        .reload  {
+            background-color: #253af1; 
+            padding: 15px; 
+            color:white; 
+            border: none;
+            font-size: 24px;
+            border-radius: 10px;
+            box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+        }
+
+        .reload:focus {
+            border: 1px solid #182ef5;
+        }
+
+        a:link {
+            color: #3245f0;
+        }
+
+        a:visited {
+            color: #3245f0;
+        }
+
+        .informasi-wrapper {
+            border: 1px solid #5a5454;
+            width: 250px;
+            margin: auto;
+            display: flex;
+            justify-content: flex-start;
+        }
+
+        .informasi {
+            list-style-type: none;
+            text-align: left;
+            font-size: 15px;
+            font-weight: 500;
+        }
+
+        .footer {
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            background-color: #161515;
+            color: #e6e0e0;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div style="text-align: center;">
+        <h2 style="margin-top: 5px;">Miaw, Saya adalah Kucing</h2>
+        <button type="button" class="pushme">Tekan saya</button>
+        <button type="button" class="reload" onClick="window.location.reload();">Ganti</button>
+        <div style="margin-bottom: 2rem;"></div>
+        <div id="output">
+            <div class="informasi-wrapper">
+                <ul class="informasi">
+                    <li>1. Tekan Saya</li>
+                    <li>2. Ganti</li>
+                    <li>3. Balik ke nomer 1</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <p style="margin: 6px 8px">Fetching data dan Ucapan matur suwon ke <a href="https://http.cat/" target="_blank"> HTTP Cat</a></p>
+    </div>
+    <script type="text/javascript">
+        const buttons = document.querySelector('.pushme');
+        const reload = document.querySelector('.reload');
+
+        var http_response = [ 100, 101, 102, 
+                            200, 201, 202, 203, 204, 205, 206, 207,
+                            300, 301, 302, 303, 304, 305, 307, 308,
+                            400, 401, 402, 403, 404, 405, 406, 407, 
+                            408, 409, 410, 411, 412, 413, 414, 415, 
+                            416, 417, 418, 420, 421, 422, 423, 424,
+                            425, 426, 429, 431, 444, 450, 451, 497,
+                            498, 499, 
+                            500, 501, 502, 503, 504, 506, 507, 508,
+                            509, 510, 511, 521, 522, 523, 525, 599 
+                            ];
+
+        var random = Math.floor((Math.random() * http_response.length));
+        var statusCode = http_response[random];
+
+        buttons.addEventListener('click', function() {
+            const img = document.createElement('img');
+            img.src = 'https://http.cat/' + statusCode + '.jpg';
+            img.style.width = "100%", 
+            output.innerHTML = "";
+            output.appendChild(img);
+        });
+    </script>
+    <!-- <a target="_blank" href="https://icons8.com/icon/Y9Gn87KgrQkd/cat-caregivers">Cat Caregivers</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a> -->
+</body>
+</html>
